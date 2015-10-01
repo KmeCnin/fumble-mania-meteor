@@ -1,0 +1,16 @@
+#playersRoom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+}
+#playersRoom .comments, #playersRoom form, #playersRoom .input {
+    width: 100%;
+}
+#playersRoom .comments {
+    overflow: auto;
+    margin: 0;
+}

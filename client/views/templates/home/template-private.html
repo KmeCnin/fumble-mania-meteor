@@ -1,0 +1,8 @@
+<template name="PrivateHome">
+    <h2>Campaigns</h2>
+    <ul>
+      {{#each campaigns}}
+      <li><a href="dashboard/{{_id}}">{{title}}</a></li>
+      {{/each}}
+    </ul>
+</template>

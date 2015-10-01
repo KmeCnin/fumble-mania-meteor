@@ -1,0 +1,33 @@
+<template name="PlayersRoom">
+    <div id="playersRoom">
+        <div class="ui comments">
+            {{#each playersRoomMessages}}
+                <div class="comment">
+                    <a class="avatar">
+                        <img src="http://www.socialagent.me/wp-content/uploads/2014/07/avatarDefault.png">
+                    </a>
+                    <div class="content">
+                        <a class="author">{{username}}</a>
+                        <div class="metadata">
+                            <span class="date">{{humanDate date}}</span>
+                        </div>
+                        <div class="text">
+                            {{content}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <form class="new-message">
+            <div class="ui input action">
+                <input type="text" name="content" placeholder="Nouveau message..." />
+                <button type="submit" class="ui animated button primary">
+                    <span class="visible content">Envoyer</span>
+                    <span class="hidden content">
+                        <i class="right arrow icon"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</template>

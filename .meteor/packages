@@ -7,6 +7,8 @@ less
 jquery
 underscore
 accounts-password
+accounts-facebook
+accounts-google
 aldeed:collection2
 iron:router
 raix:handlebar-helpers

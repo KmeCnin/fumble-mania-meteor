@@ -1,4 +1,3 @@
 Router.configure({
-  layoutTemplate: 'basicLayout',
-  notFoundTemplate: 'notFound'
+  layoutTemplate: 'basicLayout'
 });
