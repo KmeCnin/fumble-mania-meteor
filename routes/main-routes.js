@@ -7,6 +7,16 @@ Router.configure({
 });
 
 /*
+SignIn page.
+layouts: SinglePageLayout.
+templates: SignIn.
+ */
+Router.route('/sign-in', function() {
+    this.layout('SinglePageLayout');
+    this.render('SignIn');
+}, {name: 'signIn'});
+
+/*
 Home page.
 layouts: ScrollPageLayout, SinglePageLayout.
 templates: PublicHome, PrivateHome.
@@ -16,6 +26,7 @@ Router.route('/', function() {
         // If user is not already authenticated.
         this.layout('ScrollPageLayout');
         this.render('PublicHome');
+        this.render('Header', {to: 'header'});
     }
     else {
         // If user is authenticated.
@@ -31,7 +42,7 @@ templates: PlayersRoom.
  */
 Router.route('/dashboard/:campaign_id', function () {
     if (! Meteor.userId()) {
-        throw new Meteor.Error("not-authorized");
+        throw new Meteor.Error('not-authorized');
     }
 
     this.render('PlayersRoom', {
