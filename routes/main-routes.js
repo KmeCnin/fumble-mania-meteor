@@ -1,20 +1,12 @@
 /*
-Default configurations.
-layouts: DashboardLayout.
- */
-Router.configure({
-    layoutTemplate: 'DashboardLayout'
-});
-
-/*
 SignIn page.
-layouts: SinglePageLayout.
+layouts: PopInLayout.
 templates: SignIn.
  */
 Router.route('/sign-in', function() {
-    this.layout('SinglePageLayout');
+    this.layout('PopInLayout');
     this.render('SignIn');
-}, {name: 'signIn'});
+}, {name: 'sign-in'});
 
 /*
 Home page.
@@ -26,14 +18,14 @@ Router.route('/', function() {
         // If user is not already authenticated.
         this.layout('ScrollPageLayout');
         this.render('PublicHome');
-        this.render('Header', {to: 'header'});
     }
     else {
         // If user is authenticated.
         this.layout('SinglePageLayout');
         this.render('PrivateHome');
+        this.render('Header', {to: 'header'});
     }
-});
+}, {name: 'home'});
 
 /*
 Dashboard displaying one campaign.
@@ -53,4 +45,5 @@ Router.route('/dashboard/:campaign_id', function () {
             });
         }
     });
-});
+    this.render('Header', {to: 'header'});
+}, {name: 'campaign'});

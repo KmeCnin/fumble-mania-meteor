@@ -1,0 +1,10 @@
+/*
+PopInLayout.
+ */
+main#pop-in {
+    display: flex;
+    overflow: hidden;
+}
+main#pop-in > * {
+    flex: 1;
+}
