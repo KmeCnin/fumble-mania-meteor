@@ -9,6 +9,19 @@ Router.route('/sign-in', function() {
 }, {name: 'sign-in'});
 
 /*
+SignOut page.
+redirect: Home.
+ */
+Router.route('/sign-out', function() {
+    this.redirect('/');
+}, {
+    name: 'sign-out',
+    onBeforeAction: function() {
+        Meteor.logout(function() {});
+        this.next();
+}});
+
+/*
 Home page.
 layouts: ScrollPageLayout, SinglePageLayout.
 templates: PublicHome, PrivateHome.
