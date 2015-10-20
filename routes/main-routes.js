@@ -9,6 +9,16 @@ Router.route('/sign-in', function() {
 }, {name: 'sign-in'});
 
 /*
+SignUp page.
+layouts: PopInLayout.
+templates: SignUp.
+ */
+Router.route('/sign-up', function() {
+    this.layout('PopInLayout');
+    this.render('SignUp');
+}, {name: 'sign-up'});
+
+/*
 SignOut page.
 redirect: Home.
  */
@@ -29,14 +39,13 @@ templates: PublicHome, PrivateHome.
 Router.route('/', function() {
     if (! Meteor.userId()) {
         // If user is not already authenticated.
-        this.layout('ScrollPageLayout');
+        this.layout('SinglePageLayout');
         this.render('PublicHome');
     }
     else {
         // If user is authenticated.
         this.layout('SinglePageLayout');
         this.render('PrivateHome');
-        this.render('Header', {to: 'header'});
     }
 }, {name: 'home'});
 

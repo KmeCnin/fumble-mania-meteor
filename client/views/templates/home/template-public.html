@@ -1,12 +1,30 @@
-<template name="PublicHome">
-    <h1>Fumble Mania.</h1>
-    <hr>
-    <a href="{{pathFor route='sign-in'}}" class="ui button">Log in</a>
-    <hr>
-    This project is an online role-playing games platform using Meteor and Semantic UI.
-<br>
-    <br>
-    The aim is to provide a way to play "old school" role-playing games without the need to meet all around a physical table.<br>
-    I know that there is already some softwares using remote videos conferences but here, we want to be able to play in an asynchrone way.<br>
-    Like this we are able to play when we have time, we are not constrained to be at defined time all togethers.
-</template>
+<template name="PublicHome"><div id="PublicHome">
+
+    <!-- Page Contents -->
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <div class="right item">
+              <a href="{{pathFor route='sign-in'}}" class="ui inverted button">Log in</a>
+              <a href="{{pathFor route='sign-up'}}" class="ui inverted button">Sign Up</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui text container">
+          <h1 class="ui inverted header">
+            Fumble Mania
+          </h1>
+          <h2>The online role-playing game plateform.</h2>
+          <a href="{{pathFor route='sign-up'}}" class="ui huge primary button">Get Started <i class="right arrow icon"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+</div></template>
