@@ -1,7 +1,46 @@
-<template name="SignUp">
-    <div id="sign-up" class="ui middle aligned center aligned grid">
-        <div class="column">
-        {{> atForm}}
+<template name="SignUp"><div id="SignUp">
+    <div class="at-form">
+        <div class="at-title">
+            <h3>Create an Account</h3>
+        </div>
+        <div class="at-pwd-form">
+            <form role="form" id="at-pwd-form" novalidate="" action="#" method="POST">
+                <div class="at-input has-feedback">
+                    <label for="at-field-email">
+                        Email 
+                    </label>
+                    <input type="email" id="at-field-email" name="at-field-email" placeholder="Email" autocapitalize="none" autocorrect="off">
+                </div>    
+                <div class="at-input has-feedback">
+                    <label for="at-field-password">
+                        Password 
+                    </label>
+                    <input type="password" id="at-field-password" name="at-field-password" placeholder="Password" autocapitalize="none" autocorrect="off">
+                </div>    
+                <div class="at-input has-feedback">
+                    <label for="at-field-password_again">
+                        Password (again) 
+                    </label>
+                    <input type="password" id="at-field-password_again" name="at-field-password_again" placeholder="Password (again)" autocapitalize="none" autocorrect="off">
+                </div>    
+                <button type="submit" class="at-btn submit" id="at-btn">
+                    Register Now!
+                </button>
+            </form>
+        </div>
+        <div class="at-terms-link at-wrap">
+            <p>
+                By clicking Register, you agree to our
+                <a href="privacy">Privacy Policy</a>
+                and
+                <a href="terms-of-use">Terms of Use</a>
+            </p>
+        </div>
+        <div class="at-signin-link">
+            <p>
+                If you already have an account
+                <a href="{{pathFor route='sign-in'}}" id="at-signIn" class="at-link at-signin">sign in</a>
+            </p>
         </div>
     </div>
-</template>
+</div></template>
